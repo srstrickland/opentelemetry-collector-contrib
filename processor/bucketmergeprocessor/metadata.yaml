@@ -1,0 +1,20 @@
+display_name: Bucket Merge Processor
+type: bucketmerge
+
+status:
+  class: processor
+  stability:
+    development: [metrics]
+  distributions: []
+  codeowners:
+    active: [srstrickland]
+
+tests:
+  config:
+    classic:
+      max_buckets: 10
+      strategy: logarithmic
+      bias: upper
+      retain_bounds: [10, 30, 60]
+    exponential:
+      max_buckets: 20
